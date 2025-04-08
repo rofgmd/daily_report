@@ -50,6 +50,8 @@ cd daily_report
 建议使用虚拟环境（如 `venv` / `conda`）
 
 ```bash
+python -m venv dairy_report
+source dairy_report/bin/activate
 pip install -r requirements.txt
 ```
 
