@@ -1,9 +1,10 @@
 import tushare as ts
 import os
 from datetime import datetime, timedelta
-from config.config import TUSHARE_TOKEN
+from conf.env_config import ENV_CONFIG
 
-ts.set_token(TUSHARE_TOKEN)
+env_config = ENV_CONFIG()
+ts.set_token(env_config.TUSHARE_TOKEN)
 pro = ts.pro_api()
 
 def is_today_trading_day() -> bool:
@@ -13,8 +14,9 @@ def is_today_trading_day() -> bool:
 
 def get_last_trading_date() -> str:
     today = datetime.today().strftime('%Y%m%d')
-    df = pro.trade_cal(exchange='SSE', end_date=today)
-    df = df[df['is_open'] == 1]
+    start_date = (datetime.today() - timedelta(days=10)).strftime('%Y%m%d')  
+    df = pro.trade_cal(exchange='SSE', start_date=start_date, end_date=today)
+    df = df.sort_values(by='cal_date', ascending=True)
     if df.empty:
         return None
     return df.iloc[-1]['cal_date']

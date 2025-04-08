@@ -6,6 +6,15 @@ The format is based on [Semantic Versioning](https://semver.org/lang/en/), and t
 
 ---
 
+## [0.2.0] - 2025-04-08
+
+### Added
+- Added `email_sender.py` to send email
+- Added `date_utils.py` to judge trade day
+
+### Changed
+- Improved project description in `README.md`.
+
 ## [0.1.1] - 2025-04-08
 
 ### Added

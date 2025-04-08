@@ -1,4 +1,3 @@
-from utils.trading_calendar.date_utils import get_last_trading_date, is_today_trading_day
 import requests
 from datetime import datetime
 
@@ -9,7 +8,7 @@ CHINESE_MARKET_CODES = {
     "创业板指": "sz399006"
 }
 
-def get_chinese_market_info(code: str) -> str:
+def get_chinese_stock_info(code: str) -> str:
     url = f"http://hq.sinajs.cn/list={code}"
     headers = {
         "Referer": "http://finance.sina.com.cn",
@@ -37,7 +36,7 @@ def get_chinese_market_info(code: str) -> str:
 def fetch_all_markets():
     results = []
     for name, code in CHINESE_MARKET_CODES.items():
-        result = get_chinese_market_info(code)
+        result = get_chinese_stock_info(code)
         results.append(f"{name}：{result}")
     return results
 

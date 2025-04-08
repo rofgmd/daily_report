@@ -1,16 +1,18 @@
-# 邮箱配置
-SMTP_SERVER = "smtp.qq.com"
-SMTP_PORT = 465
-EMAIL_USER = "your_email@qq.com"
-EMAIL_PASS = "your_smtp_auth_code"
-EMAIL_RECEIVERS = ["target1@example.com", "target2@example.com"]
+from utils import email_sender
 
-# Tushare
-TUSHARE_TOKEN = "your_tushare_token"
-STOCK_LIST = ["000001.SZ", "600519.SH"]
+if __name__ == "__main__":
+    subject = "测试日报：来自 send_email 实际发送"
+    html_content = """
+    <html>
+        <body>
+            <h2>这是一封测试邮件</h2>
+            <p>该邮件由 <strong>send_email</strong> 函数真实发送。</p>
+        </body>
+    </html>
+    """
 
-# 新闻源
-NEWS_RSS_FEEDS = [
-    "https://news.baidu.com/rss?cat=finance",
-    "https://www.ithome.com/rss/"
-]
+    try:
+        email_sender.send_email(subject, html_content)
+        print("✅ 邮件发送成功")
+    except Exception as e:
+        print(f"❌ 邮件发送失败：{e}")
