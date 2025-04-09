@@ -2,3 +2,4 @@ tushare
 pyyaml
 python-dotenv
 requests
+yfinance

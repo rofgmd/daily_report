@@ -1,14 +1,21 @@
 import requests
+import re
 from datetime import datetime
+import yfinance as yf
 
 # 支持多个指数代码：上证、深成、创业板、恒指、美股（用新浪提供的代码）
-CHINESE_MARKET_CODES = {
+MAINLAND_CHINESE_MARKET_CODES = {
     "上证指数": "sh000001",
     "深证成指": "sz399001",
     "创业板指": "sz399006"
 }
 
-def get_chinese_stock_info(code: str) -> str:
+US_MARKET_CODES = {
+    "道琼斯": "gb_dji", 
+    "纳斯达克": "gb_ixic"
+}
+
+def get_mainland_chinese_stock_info(code: str) -> str:
     url = f"http://hq.sinajs.cn/list={code}"
     headers = {
         "Referer": "http://finance.sina.com.cn",
@@ -32,12 +39,104 @@ def get_chinese_stock_info(code: str) -> str:
         return f"指数收盘价 {price}，{direction} {abs(pct):.2f}%（{change:+.2f}），成交额 {amount:.2f}亿"
     except Exception as e:
         return f"获取失败: {e}"
+    
+def get_hk_index_info() -> str:
+    url = "https://hq.sinajs.cn/?_=1744186268202&list=rt_hkHSI"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0",
+        "Referer": "https://finance.sina.com.cn/",
+        "Content-Type": "application/javascript; charset=GB18030",
+    }
+
+    response = requests.get(url, headers=headers)
+    response.encoding = "GB18030"  # 设置正确编码
+
+    raw_data = response.text
+    data_str = raw_data.split('"')[1]
+    fields = data_str.split(',')
+    direction = "上涨" if float(fields[7]) > 0 else "下跌" if float(fields[7]) < 0 else "持平"
+    return f"恒生指数：指数收盘价 {fields[6]}，{direction} {abs(float(fields[8])):.2f}%（{float(fields[7]):+.2f}），成交额 {float(fields[11])/100000:.2f}亿"    
+
+def get_us_index_info() -> str:
+    url = "https://hq.sinajs.cn/?_=0.7533239877415743&list=gb_$dji,gb_ixic,gb_$inx"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0",
+        "Referer": "https://stock.finance.sina.com.cn/usstock/quotes/.DJI.html",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6,zh-HK;q=0.5",
+        "Connection": "Keep-Alive",
+        "Content-Type": "application/javascript; charset=GB18030",
+    }
+    response = requests.get(url, headers=headers)
+    response.encoding = "GB18030"
+    data = response.text
+
+    # 拆分成两段数据
+    lines = data.strip().split(";\n")
+    results = []
+    name_list = ["道琼斯", "纳斯达克", "标普500"]
+    for index, line in enumerate(lines):
+        if not line.strip():
+            continue
+        var_name = line.split("=")[0].strip()
+        content = line.split("=")[1].strip().strip('"')
+        fields = content.split(',')
+
+        # 指数中文名（fields[0] 乱码可能会因终端显示问题而异常）
+        name = var_name.split("_")[-1].upper()  # eg. gb_$dji -> $DJI
+        direction = "上涨" if float(fields[4]) > 0 else "下跌" if float(fields[4]) < 0 else "持平"
+        result = f"{name_list[index]}：指数收盘价 {fields[1]}，{direction} {abs(float(fields[2])):.2f}%（{float(fields[4]):+.2f}），成交额 {float(fields[10])/100000000:.2f}亿"
+        results.append(result)
+    
+    return "\n".join(results)
+
+def get_global_index_info() -> str:
+    url = "https://hq.sinajs.cn/?list=znb_UKX,znb_DAX,znb_CAC,znb_NKY,znb_KOSPI,znb_TWJQ"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0",
+        "Referer": "https://stock.finance.sina.com.cn",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6,zh-HK;q=0.5",
+        "Connection": "Keep-Alive",
+        "Content-Type": "application/javascript; charset=GB18030",
+    }
+
+    response = requests.get(url, headers=headers)
+    response.encoding = "GB18030"
+    data = response.text
+
+    lines = data.strip().split(";\n")
+    results = []
+
+    name_list= ["英国富时100", "德国DAX指数", "法国CAC40指数", "日经225指数", "韩国首尔综合指数", "台湾加权指数"]
+
+
+    for line in lines:
+        if not line.strip():
+            continue
+        var_name = line.split("=")[0].strip()
+        key_raw = var_name.split("_")[-1].upper()
+        content = line.split("=")[1].strip().strip('"')
+        fields = content.split(',')
+
+        try:
+            change = float(fields[2])
+            direction = "上涨" if change > 0 else "下跌" if change < 0 else "持平"
+            result = f"{fields[0]}：指数收盘价 {fields[1]}，{direction} {abs(float(fields[3])):.2f}%（{change:+.2f}）"
+            results.append(result)                
+        except (ValueError, IndexError):
+            continue  # 某些字段异常就跳过
+
+    return "\n".join(results)
 
 def fetch_all_markets():
     results = []
-    for name, code in CHINESE_MARKET_CODES.items():
-        result = get_chinese_stock_info(code)
+
+    for name, code in MAINLAND_CHINESE_MARKET_CODES.items():
+        result = get_mainland_chinese_stock_info(code)
         results.append(f"{name}：{result}")
+    results.append(get_hk_index_info())
+    results.append(get_us_index_info())
+    results.append(get_global_index_info())
+    
     return results
 
 if __name__ == "__main__":
