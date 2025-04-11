@@ -6,6 +6,12 @@ The format is based on [Semantic Versioning](https://semver.org/lang/en/), and t
 
 ---
 
+## [0.2.2] - 2025-04-11
+
+### Added
+
+- Added Email Template
+
 ## [0.2.1] - 2025-04-09
 
 ### Added

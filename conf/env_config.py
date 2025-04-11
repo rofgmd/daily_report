@@ -5,7 +5,7 @@ import yaml
 
 # 加载 .env 文件
 env_path = Path(__file__).resolve().parent.parent / ".env"
-load_dotenv(dotenv_path=env_path)
+load_dotenv(dotenv_path=env_path, override=True)
 
 class ENV_CONFIG:
     def __init__(self):

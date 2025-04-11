@@ -12,19 +12,21 @@
 | A股大盘行情  | 基于新浪财经接口获取上证/深证/创业板数据 | ✅ 已完成 |
 | 节假日判断   | 判断昨日是否为交易日                     | ✅ 已完成 |
 | 邮件推送     | SMTP 邮件发送模块                        | ✅ 已完成 |
-| 科技新闻     | 支持 RSS 新闻源（如 ITHome、少数派）     | ⏳ 开发中 |
-| HTML 模板    | 渲染为 HTML 邮件                         | 🛠 规划中 |
+| 科技新闻     | 支持 RSS 新闻源（如 ITHome、少数派）     | 🛠 规划中 |
+| HTML 模板    | 渲染为 HTML 邮件                         | ✅ 已完成 |
 | 多市场支持   | 港股、美股行情                           | ✅ 已完成 |
 | A股个股推送  | A股个股行情推送                          | 🛠 规划中 |
 | 港股个股推送 | 港股个股行情推送                         | 🛠 规划中 |
 | 美股个股推送 | 美股个股行情推送                         | 🛠 规划中 |
 | 体育新闻     | 获取足球、NBA等新闻                      | 🛠 规划中 |
+| 天气信息     | 获取深圳天气信息                      | 🛠 规划中 |
 
 ---
 
 ## 🛠 项目结构概览
 
 ```markdown
+.
 ├── CHANGELOG.md
 ├── conf
 │   ├── __init__.py
@@ -34,20 +36,22 @@
 ├── fetchers
 │   ├── __init__.py
 │   └── stock.py
-├──utils
-│    ├── __init__.py
-│    ├── email_sender.py
-│    └── trading_calendar
-│       ├── __init__.py
-│       ├── base.py
-│       └── date_utils.py
-├── .env
-├── .gitignore
 ├── main.py
 ├── README.md
-└── requirements.txt
+├── rendered_report.html
+├── requirements.txt
+├── template
+│   ├── daily_email.py
+│   └── daily_report.html
+└── utils
+    ├── __init__.py
+    ├── email_sender.py
+    └── trading_calendar
+        ├── __init__.py
+        ├── base.py
+        └── date_utils.py
 
-6 directories, 15 files
+6 directories, 18 files
 ```
 
 ---
@@ -133,12 +137,12 @@ python -m utils.email_sender
 
 ## 📌 TODO_LIST（未来计划）
 
-- [ ] 完成邮件模块并自动推送日报
+- [X] 完成邮件模块并自动推送日报
 - [ ] 添加科技资讯（RSS 抓取）
 - [ ] 添加体育资讯
 - [X] 增加港股、美股等多市场行情
 - [ ] 个股行情支持
-- [ ] 支持 HTML 邮件格式模板
+- [X] 支持 HTML 邮件格式模板
 - [ ] 使用 Docker 部署或定时任务
 
 ---

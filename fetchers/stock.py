@@ -1,7 +1,8 @@
 import requests
 import re
+import os
 from datetime import datetime
-import yfinance as yf
+from jinja2 import Environment, FileSystemLoader
 
 # 支持多个指数代码：上证、深成、创业板、恒指、美股（用新浪提供的代码）
 MAINLAND_CHINESE_MARKET_CODES = {
@@ -15,7 +16,7 @@ US_MARKET_CODES = {
     "纳斯达克": "gb_ixic"
 }
 
-def get_mainland_chinese_stock_info(code: str) -> str:
+def get_mainland_chinese_stock_info(name: str, code: str) -> str:
     url = f"http://hq.sinajs.cn/list={code}"
     headers = {
         "Referer": "http://finance.sina.com.cn",
@@ -39,7 +40,40 @@ def get_mainland_chinese_stock_info(code: str) -> str:
         return f"指数收盘价 {price}，{direction} {abs(pct):.2f}%（{change:+.2f}），成交额 {amount:.2f}亿"
     except Exception as e:
         return f"获取失败: {e}"
-    
+
+def get_mainland_china_index_info() -> str:
+    url = "http://hq.sinajs.cn/list=sh000001,sz399001,sz399006"
+    headers = {
+        "Referer": "http://finance.sina.com.cn",
+        "User-Agent": "Mozilla/5.0"
+    }
+    # 请求并转码为 utf-8（新浪返回的是 gb2312 编码）
+    resp = requests.get(url, headers=headers)
+    raw = resp.content.decode("gb2312")
+    lines = raw.strip().split(";\n")
+    results = []
+    for line in lines:
+        if not line.strip():
+            continue
+        var_name = line.split("=")[0].strip()
+        key_raw = var_name.split("_")[-1].upper()
+        content = line.split("=")[1].strip().strip('"')
+        fields = content.split(',')
+        try:
+            name = fields[0]
+            price = float(fields[3])
+            change = float(fields[3]) - float(fields[2])
+            pct = (change / float(fields[2])) * 100
+            amount = float(fields[9]) / 100000000  # 单位转为亿
+            direction = "上涨" if change > 0 else "下跌" if change < 0 else "持平"
+
+            result = f"{name}：指数收盘价 {price}，{direction} {abs(pct):.2f}%（{change:+.2f}），成交额 {amount:.2f}亿"
+            results.append(result)
+        except Exception as e:
+            return f"获取失败: {e}"  
+
+    return "\n".join(results)  
+
 def get_hk_index_info() -> str:
     url = "https://hq.sinajs.cn/?_=1744186268202&list=rt_hkHSI"
     headers = {
@@ -108,7 +142,6 @@ def get_global_index_info() -> str:
 
     name_list= ["英国富时100", "德国DAX指数", "法国CAC40指数", "日经225指数", "韩国首尔综合指数", "台湾加权指数"]
 
-
     for line in lines:
         if not line.strip():
             continue
@@ -129,14 +162,10 @@ def get_global_index_info() -> str:
 
 def fetch_all_markets():
     results = []
-
-    for name, code in MAINLAND_CHINESE_MARKET_CODES.items():
-        result = get_mainland_chinese_stock_info(code)
-        results.append(f"{name}：{result}")
+    results.append(get_mainland_china_index_info())
     results.append(get_hk_index_info())
     results.append(get_us_index_info())
     results.append(get_global_index_info())
-    
     return results
 
 if __name__ == "__main__":
