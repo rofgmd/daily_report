@@ -6,7 +6,13 @@ The format is based on [Semantic Versioning](https://semver.org/lang/en/), and t
 
 ---
 
-## [0.2.2] - 2025-04-11
+## [0.4.0] - 2025-05-09
+
+### Added
+
+- Added IT News
+
+## [0.3.0] - 2025-04-11
 
 ### Added
 

@@ -61,6 +61,12 @@
             color: #444;
             margin: 6px 0;
         }
+        .section ul li{
+            font-size: 18px;
+            line-height: 1.9;
+            color: #444;
+            margin: 6px 0;
+        }
     </style>
 </head>
 <body>
@@ -97,6 +103,22 @@
         {% for line in global_markets %}
         <p>{{ line }}</p>
         {% endfor %}
+    </div>
+
+    <div class="subheader">
+        科技早报
+    </div>
+
+    <div class="section">
+        <h3>IT新闻</h3>
+        <ul>
+            {% for news in it_news %}
+            <li>
+                <a href="{{ news[2] }}" target="_blank">{{ news[1] }}</a>
+                <span style="color:#777; margin-left:10px;">{{ news[0] }}</span>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>

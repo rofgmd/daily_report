@@ -12,7 +12,7 @@
 | A股大盘行情  | 基于新浪财经接口获取上证/深证/创业板数据 | ✅ 已完成 |
 | 节假日判断   | 判断昨日是否为交易日                     | ✅ 已完成 |
 | 邮件推送     | SMTP 邮件发送模块                        | ✅ 已完成 |
-| 科技新闻     | 支持 RSS 新闻源（如 ITHome、少数派）     | 🛠 规划中 |
+| 科技新闻     | 支持 RSS 新闻源（如 ITHome、少数派）     | ✅ 已完成 |
 | HTML 模板    | 渲染为 HTML 邮件                         | ✅ 已完成 |
 | 多市场支持   | 港股、美股行情                           | ✅ 已完成 |
 | A股个股推送  | A股个股行情推送                          | 🛠 规划中 |
@@ -35,6 +35,7 @@
 │   └── stock_list.yaml
 ├── fetchers
 │   ├── __init__.py
+│   ├── it_news.py
 │   └── stock.py
 ├── main.py
 ├── README.md
@@ -46,12 +47,13 @@
 └── utils
     ├── __init__.py
     ├── email_sender.py
+    ├── rss_reader.py
     └── trading_calendar
         ├── __init__.py
         ├── base.py
         └── date_utils.py
 
-6 directories, 18 files
+6 directories, 20 files
 ```
 
 ---
@@ -133,12 +135,29 @@ python -m utils.email_sender
 邮件发送失败
 ```
 
+### 测试IT新闻获取
+
+```bash
+python -m fetchers.it_news
+```
+
+示例输出：
+
+```markdown
+['2025-05-09 07:58', '《四海兄弟：故乡》游戏 PC 配置需求公布，8 月 8 日发售', 'https://www.ithome.com/0/851/651.htm']
+['2025-05-09 07:43', '红魔电竞平板新品即将发布，采用四等边、大电池设计', 'https://www.ithome.com/0/851/650.htm']
+['2025-05-09 07:41', '谷歌 AI 出击：冒充客服等骗局减少 80% 以上，Gemini Nano 护航网络安全', 'https://www.ithome.com/0/851/649.htm']
+['2025-05-09 07:39', '《霍格沃茨之遗》任天堂 Switch 2 版本确认支持 DLSS，最高 1440p 画质', 'https://www.ithome.com/0/851/648.htm']
+['2025-05-09 07:30', '中兴推送巡天 & 晴天 BE5100 / BE5100 Pro+ 路由器版本升级，新增防蹭网功能等', 'https://www.ithome.com/0/851/647.htm']
+['2025-05-09 07:22', 'vivo X Fold5 折叠手机曝料：6000mAh 电池 + 90W 快充、厚 4.3/9.33mm，骁龙 8 Gen 3 芯片', 'https://www.ithome.com/0/851/646.htm']
+```
+
 ---
 
 ## 📌 TODO_LIST（未来计划）
 
 - [X] 完成邮件模块并自动推送日报
-- [ ] 添加科技资讯（RSS 抓取）
+- [X] 添加科技资讯（RSS 抓取）
 - [ ] 添加体育资讯
 - [X] 增加港股、美股等多市场行情
 - [ ] 个股行情支持

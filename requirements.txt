@@ -3,3 +3,5 @@ pyyaml
 python-dotenv
 requests
 yfinance
+jinja2
+feedparser

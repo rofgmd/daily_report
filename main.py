@@ -1,14 +1,16 @@
 from utils import email_sender
 from fetchers.stock import get_mainland_china_index_info, get_hk_index_info, get_us_index_info, get_global_index_info
+from fetchers.it_news import get_it_news_for_report
 from template.daily_email import render_email_content
 
 if __name__ == "__main__":
-    subject = "每日早报测试"
+    subject = "每日早报"
     html_content = render_email_content(
         get_mainland_china_index_info(),
         get_hk_index_info(),
         get_us_index_info(),
-        get_global_index_info()
+        get_global_index_info(), 
+        get_it_news_for_report()
     )
 
     try:
