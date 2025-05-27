@@ -5,3 +5,4 @@ requests
 yfinance
 jinja2
 feedparser
+dotenv

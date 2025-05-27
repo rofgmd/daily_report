@@ -21,7 +21,7 @@ def send_email(subject, html_content):
         smtp.login(env_config.EMAIL_USER, env_config.EMAIL_PASS)
         smtp.sendmail(env_config.EMAIL_USER, env_config.EMAIL_RECEIVERS, msg.as_string())
         smtp.quit()
-        print("邮件发送成功")
+        # print("邮件发送成功")
     except Exception as e:
         print("邮件发送失败", e)
 
