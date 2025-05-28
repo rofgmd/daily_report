@@ -39,11 +39,27 @@
             border-bottom: 4px solid #5a8fd1;
             margin-bottom: 8px;
         }
+        .third-header {
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 8px 0 0px 30px; /* reduced padding */
+            color: #222;         
+        }
+        .weather-section {
+            background: white;
+            padding: 10px 16px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            font-size: 18px;
+            color: #333;
+            line-height: 1.7;
+        }
         .section {
             background: white;
-            margin: 20px 10px;
-            padding: 24px 48px;
-            border-left: 4px solid #5a8fd1;
+            margin: 0px 10px;
+            padding: 6px 40px;
+            /* border-left: 4px solid #5a8fd1; */
             border-bottom: 1px solid #ddd;
             box-shadow: 0 2px 12px rgba(0,0,0,0.03);
             border-radius: 10px;
@@ -54,6 +70,13 @@
             color: #222;
             border-bottom: 1px solid #eee;
             padding-bottom: 6px;
+        }
+        .section h4 {
+            margin: 8px 0 8px;
+            font-size: 20px;
+            color: #222;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 4px;
         }
         .section p {
             font-size: 18px;
@@ -75,31 +98,33 @@
         <div class="date">{{ date }}</div>
     </div>
 
+    <div class="weather-section">
+        <p>{{WeatherInfo}}</p>
+    </div>
+
     <div class="subheader">
         财经早报
     </div>
 
+    <div class="third-header">
+        股票市场
+    </div>
+
     <div class="section">
-        <h3>A股市场</h3>
+        <h4>A股市场</h4>
         {% for line in cn_markets %}
         <p>{{ line }}</p>
         {% endfor %}
-    </div>
 
-    <div class="section">
-        <h3>港股市场</h3>
+        <h4>港股市场</h4>
         <p>{{ hk_markets }}</p>
-    </div>
 
-    <div class="section">
-        <h3>美股市场</h3>
+        <h4>美股市场</h4>
         {% for line in us_markets %}
         <p>{{ line }}</p>
         {% endfor %}
-    </div>
 
-    <div class="section">
-        <h3>全球市场</h3>
+        <h4>全球市场</h4>
         {% for line in global_markets %}
         <p>{{ line }}</p>
         {% endfor %}
@@ -110,7 +135,7 @@
     </div>
 
     <div class="section">
-        <h3>IT新闻</h3>
+        <h4>IT新闻</h4>
         <ul>
             {% for news in it_news %}
             <li>

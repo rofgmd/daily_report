@@ -39,11 +39,27 @@
             border-bottom: 4px solid #5a8fd1;
             margin-bottom: 8px;
         }
+        .third-header {
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 8px 0 0px 30px; /* reduced padding */
+            color: #222;         
+        }
+        .weather-section {
+            background: white;
+            padding: 10px 16px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            font-size: 18px;
+            color: #333;
+            line-height: 1.7;
+        }
         .section {
             background: white;
-            margin: 20px 10px;
-            padding: 24px 48px;
-            border-left: 4px solid #5a8fd1;
+            margin: 0px 10px;
+            padding: 6px 40px;
+            /* border-left: 4px solid #5a8fd1; */
             border-bottom: 1px solid #ddd;
             box-shadow: 0 2px 12px rgba(0,0,0,0.03);
             border-radius: 10px;
@@ -54,6 +70,13 @@
             color: #222;
             border-bottom: 1px solid #eee;
             padding-bottom: 6px;
+        }
+        .section h4 {
+            margin: 8px 0 8px;
+            font-size: 20px;
+            color: #222;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 4px;
         }
         .section p {
             font-size: 18px;
@@ -72,54 +95,56 @@
 <body>
     <div class="header">
         <h1>早报</h1>
-        <div class="date">2025年05月09日，星期五</div>
+        <div class="date">2025年05月28日，星期三</div>
+    </div>
+
+    <div class="weather-section">
+        <p>深圳市今日天气如下：气温23℃-30℃，湿度73%，总体天气为小雨，雨虽小，注意保暖别感冒</p>
     </div>
 
     <div class="subheader">
         财经早报
     </div>
 
-    <div class="section">
-        <h3>A股市场</h3>
-        
-        <p>上证指数：指数收盘价 3343.3843，下跌 0.26%（-8.61），成交额 3044.50亿</p>
-        
-        <p>深证成指：指数收盘价 10112.174，下跌 0.84%（-85.48），成交额 4835.33亿</p>
-        
-        <p>创业板指：指数收盘价 2009.255，下跌 1.00%（-20.20），成交额 2268.48亿</p>
-        
+    <div class="third-header">
+        股票市场
     </div>
 
     <div class="section">
-        <h3>港股市场</h3>
-        <p>恒生指数：指数收盘价 22777.279，上涨 0.01%（+1.36），成交额 961.60亿</p>
-    </div>
+        <h4>A股市场</h4>
+        
+        <p>上证指数：指数收盘价 3342.9283，上涨 0.07%（+2.24），成交额 2503.42亿</p>
+        
+        <p>深证成指：指数收盘价 10025.307，下跌 0.04%（-3.80），成交额 4020.45亿</p>
+        
+        <p>创业板指：指数收盘价 1992.129，上涨 0.02%（+0.49），成交额 1769.27亿</p>
+        
 
-    <div class="section">
-        <h3>美股市场</h3>
-        
-        <p>道琼斯：指数收盘价 41368.4492，上涨 0.62%（+254.48），成交额 5.15亿</p>
-        
-        <p>纳斯达克：指数收盘价 17928.1386，上涨 1.07%（+189.98），成交额 76.94亿</p>
-        
-        <p>标普500：指数收盘价 5663.9399，上涨 0.58%（+32.66），成交额 32.09亿</p>
-        
-    </div>
+        <h4>港股市场</h4>
+        <p>恒生指数：指数收盘价 23254.449，下跌 0.55%（-127.54），成交额 999.48亿</p>
 
-    <div class="section">
-        <h3>全球市场</h3>
+        <h4>美股市场</h4>
         
-        <p>英国富时100：指数收盘价 8531.6100，下跌 0.32%（-27.72）</p>
+        <p>道琼斯：指数收盘价 42343.6484，上涨 1.78%（+740.58），成交额 5.01亿</p>
         
-        <p>德国DAX30：指数收盘价 23368.0000，上涨 1.09%（+252.04）</p>
+        <p>纳斯达克：指数收盘价 19199.1632，上涨 2.47%（+461.96），成交额 80.19亿</p>
         
-        <p>法国CAC40：指数收盘价 7686.7500，上涨 0.79%（+59.91）</p>
+        <p>标普500：指数收盘价 5921.5400，上涨 2.05%（+118.72），成交额 28.83亿</p>
         
-        <p>日经225：指数收盘价 37454.8700，上涨 1.43%（+526.24）</p>
+
+        <h4>全球市场</h4>
         
-        <p>首尔综合指数：指数收盘价 2577.1700，下跌 0.09%（-2.31）</p>
+        <p>英国富时100：指数收盘价 8778.3100，上涨 0.69%（+60.34）</p>
         
-        <p>台湾加权指数：指数收盘价 20865.7305，上涨 1.57%（+322.33）</p>
+        <p>德国DAX30：指数收盘价 24268.1387，上涨 1.00%（+240.49）</p>
+        
+        <p>法国CAC40：指数收盘价 7841.0298，上涨 0.16%（+12.90）</p>
+        
+        <p>日经225：指数收盘价 37799.8200，上涨 0.20%（+75.71）</p>
+        
+        <p>首尔综合指数：指数收盘价 2680.1500，上涨 1.63%（+42.93）</p>
+        
+        <p>台湾加权指数：指数收盘价 21335.9199，下跌 0.00%（-0.62）</p>
         
     </div>
 
@@ -128,47 +153,52 @@
     </div>
 
     <div class="section">
-        <h3>IT新闻</h3>
+        <h4>IT新闻</h4>
         <ul>
             
             <li>
-                <a href="https://www.ithome.com/0/851/651.htm" target="_blank">《四海兄弟：故乡》游戏 PC 配置需求公布，8 月 8 日发售</a>
-                <span style="color:#777; margin-left:10px;">2025-05-09 07:58</span>
+                <a href="https://www.ithome.com/0/856/457.htm" target="_blank">科技昨夜今晨 0528：小米一季度业绩再创新高；比亚迪刀片电池提前通过新国标；深蓝汽车就“车机投放降价广告”致歉...</a>
+                <span style="color:#777; margin-left:10px;">2025-05-28 07:56</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/851/650.htm" target="_blank">红魔电竞平板新品即将发布，采用四等边、大电池设计</a>
-                <span style="color:#777; margin-left:10px;">2025-05-09 07:43</span>
+                <a href="https://www.ithome.com/0/856/456.htm" target="_blank">苹果 iOS 19 新特性曝光：iPhone eSIM 可直接转移至安卓</a>
+                <span style="color:#777; margin-left:10px;">2025-05-28 07:52</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/851/649.htm" target="_blank">谷歌 AI 出击：冒充客服等骗局减少 80% 以上，Gemini Nano 护航网络安全</a>
-                <span style="color:#777; margin-left:10px;">2025-05-09 07:41</span>
+                <a href="https://www.ithome.com/0/856/455.htm" target="_blank">重量超 2 万吨，我国渤海最大海上油气平台完工起运</a>
+                <span style="color:#777; margin-left:10px;">2025-05-28 07:48</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/851/648.htm" target="_blank">《霍格沃茨之遗》任天堂 Switch 2 版本确认支持 DLSS，最高 1440p 画质</a>
-                <span style="color:#777; margin-left:10px;">2025-05-09 07:39</span>
+                <a href="https://www.ithome.com/0/856/454.htm" target="_blank">Canalys 报告 2025Q1 欧洲手机出货量：三星持平、苹果同比增 10%、小米降 2%、摩托罗拉降 19%、谷歌增 43%</a>
+                <span style="color:#777; margin-left:10px;">2025-05-28 07:41</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/851/647.htm" target="_blank">中兴推送巡天 & 晴天 BE5100 / BE5100 Pro+ 路由器版本升级，新增防蹭网功能等</a>
-                <span style="color:#777; margin-left:10px;">2025-05-09 07:30</span>
+                <a href="https://www.ithome.com/0/856/453.htm" target="_blank">SpaceX 星舰第九次试飞顺利点火升空，首次尝试重复使用超重型助推器</a>
+                <span style="color:#777; margin-left:10px;">2025-05-28 07:37</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/851/646.htm" target="_blank">vivo X Fold5 折叠手机曝料：6000mAh 电池 + 90W 快充、厚 4.3/9.33mm，骁龙 8 Gen 3 芯片</a>
-                <span style="color:#777; margin-left:10px;">2025-05-09 07:22</span>
+                <a href="https://www.ithome.com/0/856/452.htm" target="_blank">高通委托测试：苹果 iPhone 16e 自研基带 5G 性能落后于 X75 / X80 安卓竞品</a>
+                <span style="color:#777; margin-left:10px;">2025-05-28 07:28</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/851/645.htm" target="_blank">美国四大 AI 高管：政府需加大基础设施建设，并支持 AI 芯片出口</a>
-                <span style="color:#777; margin-left:10px;">2025-05-09 07:19</span>
+                <a href="https://www.ithome.com/0/856/451.htm" target="_blank">计划 6 月 24 日发布：火狐 Firefox 浏览器最新 ESR 版 140 功能前瞻</a>
+                <span style="color:#777; margin-left:10px;">2025-05-28 07:24</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/851/644.htm" target="_blank">超谷歌搜索：阿里开源创新大模型搜索引擎 ZeroSearch，成本直降 80% 且能力更强</a>
-                <span style="color:#777; margin-left:10px;">2025-05-09 07:14</span>
+                <a href="https://www.ithome.com/0/856/450.htm" target="_blank">亚马逊《黑袍纠察队》衍生剧《V 世代》第二季首曝海报发布，播出时间待定</a>
+                <span style="color:#777; margin-left:10px;">2025-05-28 07:24</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/856/449.htm" target="_blank">古尔曼：苹果计划在 iOS 19 中推出独立游戏平台应用，从而取代 Game Center 服务</a>
+                <span style="color:#777; margin-left:10px;">2025-05-28 07:15</span>
             </li>
             
         </ul>

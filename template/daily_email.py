@@ -1,5 +1,6 @@
 from fetchers.stock import get_mainland_china_index_info, get_hk_index_info, get_us_index_info, get_global_index_info
 from fetchers.it_news import get_it_news_for_report
+from fetchers.weather import shenzhen_weather
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
 import os
@@ -15,7 +16,7 @@ WEEKDAY_MAP = {
     'Sun': '星期日',
 }
 
-def render_email_content(cn_markets, hk_markets, us_markets, global_markets, it_news):
+def render_email_content(cn_markets, hk_markets, us_markets, global_markets, it_news, weather_info):
     template_dir = os.path.dirname(__file__)
     env = Environment(loader=FileSystemLoader(template_dir))
     template = env.get_template('daily_report.html')
@@ -26,7 +27,8 @@ def render_email_content(cn_markets, hk_markets, us_markets, global_markets, it_
         hk_markets=hk_markets,
         us_markets=us_markets.split("\n"),
         global_markets=global_markets.split("\n"),
-        it_news = it_news
+        it_news = it_news, 
+        WeatherInfo = weather_info
     )
     return html
 
@@ -36,7 +38,8 @@ if __name__ == "__main__":
         get_hk_index_info(),
         get_us_index_info(),
         get_global_index_info(), 
-        get_it_news_for_report()
+        get_it_news_for_report(), 
+        shenzhen_weather()
     )
 
     with open("rendered_report.html", "w", encoding="utf-8") as f:
