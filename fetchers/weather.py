@@ -44,11 +44,15 @@ def fetch_weather(city_code) -> Weather_Info:
         return Weather_Info(city="未知城市", updateTime="接口异常", weather_data={})
 
 def shenzhen_weather():
-    shenzhen_weather = fetch_weather(cities["深圳"])
-    if isinstance(shenzhen_weather, Weather_Info):
-        return(f"{shenzhen_weather.city}今日天气如下：气温{shenzhen_weather.low_temperature}-{shenzhen_weather.high_temperature}，湿度{shenzhen_weather.moisture}，总体天气为{shenzhen_weather.weather_type}，{shenzhen_weather.notice}")
+    info = fetch_weather(cities["深圳"])
+    if isinstance(info, Weather_Info):
+        try:
+            return (f"{info.city}今日天气如下：气温{info.low_temperature}-{info.high_temperature}，湿度{info.moisture}，总体天气为{info.weather_type}，{info.notice}")
+        except AttributeError as e:
+            print(f"[WARNING] 天气信息缺失：{e}")
+            return "获取天气信息不完整，使用默认值。"
     else:
-        return("获取天气信息失败，使用默认值。")    
+        return "获取天气信息失败，使用默认值。"
 
 if __name__ == "__main__":
     print(shenzhen_weather())

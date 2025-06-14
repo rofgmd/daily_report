@@ -6,6 +6,12 @@ The format is based on [Semantic Versioning](https://semver.org/lang/en/), and t
 
 ---
 
+## [0.5.1] - 2025-06-14
+
+### Changed
+
+- Fix Weather Bug
+
 ## [0.5.0] - 2025-05-28
 
 ### Added
