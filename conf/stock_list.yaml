@@ -1,2 +1,36 @@
-stocks:
-  - 000001.SH
+stocks_cn:
+  - sh600036 # 招商银行
+  - sh601318 # 中国平安
+  - sz002594 # 比亚迪
+  - sz002352 # 顺丰控股
+  - sh600028 # 中国石化
+  - sh600519 # 贵州茅台
+  - sz000063 # 中兴通讯
+  - sh601766 # 中国中车
+  - sz000651 # 格力电器
+  - sz000977 # 浪潮信息
+  - sh601899 # 紫金矿业
+  - sz000002 # 万 科Ａ
+stocks_hk:
+  - rt_hk00700 # 腾讯控股
+  - rt_hk01810 # 小米
+  - rt_hk09988 # 阿里巴巴
+  - rt_hk03690 # 美团
+  - rt_hk09618 # 京东
+  - rt_hk00005 # 汇丰控股
+stocks_us:
+  - gb_aapl # 苹果
+  - gb_googl # 谷歌
+  - gb_amzn # 亚马逊
+  - gb_msft # 微软
+  - gb_tsla # 特斯拉
+  - gb_meta # Meta（Facebook）
+  - gb_nvda # 英伟达
+  - gb_tme # 腾讯音乐
+  - gb_baba # 阿里巴巴
+  - gb_jd # 京东
+  - gb_se # Sea Limited
+  - gb_asml # ASML
+  - gb_hsai # 禾赛科技
+  - gb_tsm # 台积电
+  - gb_pdd # 拼多多

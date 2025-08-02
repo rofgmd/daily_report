@@ -19,8 +19,7 @@ def get_it_news_from_yaml(yaml_path="conf/rss_feeds.yaml", max_items=5):
 def get_it_news_for_report():
     tz = pytz.timezone("Asia/Shanghai")
     now = datetime.now(tz)
-    today_8am = now.replace(hour=8, minute=0, second=0, microsecond=0)
-    yesterday_11pm = (today_8am - timedelta(days=1)).replace(hour=23)
+    yesterday = (now - timedelta(days=1))
     raw_items = get_it_news_from_yaml(max_items=100)
     result = []
     for item in raw_items:
@@ -30,13 +29,11 @@ def get_it_news_for_report():
             published_dt = datetime.strptime(published_str, "%Y-%m-%d %H:%M:%S %Z")
             published_dt = tz.localize(published_dt.replace(tzinfo=None))
 
-            if yesterday_11pm <= published_dt < today_8am:
+            if yesterday <= published_dt:
                 result.append([published_dt.strftime("%Y-%m-%d %H:%M"), title_line.strip(), url.strip()])
         except Exception:
             continue  # skip malformed items
     return result
-
-
 
 if __name__ == "__main__":
     it_news = get_it_news_for_report()

@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <title>财经早报</title>
     <style>
-        body {
+    th, td {
+        text-align: center;            /* 水平居中 */
+        vertical-align: middle;        /* 垂直居中 */
+    }
+    .up     { color: red; }
+    .down   { color: green; }
+    .neutral{ color: #777; }
+    body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #f7f7f7;
             padding: 0;
@@ -95,11 +102,11 @@
 <body>
     <div class="header">
         <h1>早报</h1>
-        <div class="date">2025年05月28日，星期三</div>
+        <div class="date">2025年08月02日，星期六</div>
     </div>
 
     <div class="weather-section">
-        <p>深圳市今日天气如下：气温23℃-30℃，湿度73%，总体天气为小雨，雨虽小，注意保暖别感冒</p>
+        <p>深圳市今日天气如下：气温27℃-31℃，湿度92%，总体天气为阴，不要被阴云遮挡住好心情</p>
     </div>
 
     <div class="subheader">
@@ -112,39 +119,362 @@
 
     <div class="section">
         <h4>A股市场</h4>
+        <!-- 市场表现 -->
         
-        <p>上证指数：指数收盘价 3342.9283，上涨 0.07%（+2.24），成交额 2503.42亿</p>
+        <p>上证指数：指数收盘价 3559.9518，下跌 0.37%（-13.26），成交额 6846.45亿</p>
         
-        <p>深证成指：指数收盘价 10025.307，下跌 0.04%（-3.80），成交额 4020.45亿</p>
+        <p>深证成指：指数收盘价 10991.321，下跌 0.17%（-18.45），成交额 9137.05亿</p>
         
-        <p>创业板指：指数收盘价 1992.129，上涨 0.02%（+0.49），成交额 1769.27亿</p>
+        <p>创业板指：指数收盘价 2322.627，下跌 0.24%（-5.69），成交额 4652.81亿</p>
         
 
+        <table style="width: 100%; border-collapse: collapse; font-size: 16px;">
+            <thead>
+                <tr style="background-color: #f0f4fa;">
+                <th style="padding: 8px;">股票</th>
+                <th style="padding: 8px;">收盘价</th>
+                <th style="padding: 8px;">涨跌</th>
+                <th style="padding: 8px;">成交额</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">招商银行</td>
+                <td style="padding:8px;">44.42</td>
+                <td style="padding:8px;"><span class="down">-0.13%</span></td>
+                <td style="padding:8px;">26.52亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">中国平安</td>
+                <td style="padding:8px;">58.20</td>
+                <td style="padding:8px;"><span class="down">-0.83%</span></td>
+                <td style="padding:8px;">28.60亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">比亚迪</td>
+                <td style="padding:8px;">105.80</td>
+                <td style="padding:8px;"><span class="up">+0.53%</span></td>
+                <td style="padding:8px;">38.17亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">顺丰控股</td>
+                <td style="padding:8px;">46.17</td>
+                <td style="padding:8px;"><span class="up">+0.37%</span></td>
+                <td style="padding:8px;">10.18亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">中国石化</td>
+                <td style="padding:8px;">5.69</td>
+                <td style="padding:8px;"><span class="down">-5.32%</span></td>
+                <td style="padding:8px;">23.52亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">贵州茅台</td>
+                <td style="padding:8px;">1417.00</td>
+                <td style="padding:8px;"><span class="down">-0.33%</span></td>
+                <td style="padding:8px;">42.01亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">中兴通讯</td>
+                <td style="padding:8px;">33.90</td>
+                <td style="padding:8px;"><span class="down">-1.14%</span></td>
+                <td style="padding:8px;">26.75亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">中国中车</td>
+                <td style="padding:8px;">7.31</td>
+                <td style="padding:8px;"><span class="down">-1.08%</span></td>
+                <td style="padding:8px;">7.02亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">格力电器</td>
+                <td style="padding:8px;">45.89</td>
+                <td style="padding:8px;"><span class="up">+0.59%</span></td>
+                <td style="padding:8px;">10.73亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">浪潮信息</td>
+                <td style="padding:8px;">54.10</td>
+                <td style="padding:8px;"><span class="down">-2.99%</span></td>
+                <td style="padding:8px;">35.58亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">紫金矿业</td>
+                <td style="padding:8px;">19.26</td>
+                <td style="padding:8px;"><span class="up">+0.57%</span></td>
+                <td style="padding:8px;">23.51亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">万 科Ａ</td>
+                <td style="padding:8px;">6.39</td>
+                <td style="padding:8px;"><span class="down">-0.78%</span></td>
+                <td style="padding:8px;">5.93亿</td>
+                </tr>
+            
+            </tbody>
+        </table>
+
         <h4>港股市场</h4>
-        <p>恒生指数：指数收盘价 23254.449，下跌 0.55%（-127.54），成交额 999.48亿</p>
+        <p>恒生指数：指数收盘价 24507.811，下跌 1.07%（-265.52），成交额 2546.74亿</p>
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 16px;">
+            <thead>
+                <tr style="background-color: #f0f4fa;">
+                <th style="padding: 8px;">股票</th>
+                <th style="padding: 8px;">收盘价</th>
+                <th style="padding: 8px;">涨跌</th>
+                <th style="padding: 8px;">成交额</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">腾讯控股</td>
+                <td style="padding:8px;">535.00</td>
+                <td style="padding:8px;"><span class="down">-2.73%</span></td>
+                <td style="padding:8px;">115.08亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">小米集团－Ｗ</td>
+                <td style="padding:8px;">53.40</td>
+                <td style="padding:8px;"><span class="up">+0.47%</span></td>
+                <td style="padding:8px;">66.92亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">阿里巴巴－Ｗ</td>
+                <td style="padding:8px;">116.90</td>
+                <td style="padding:8px;"><span class="up">+1.04%</span></td>
+                <td style="padding:8px;">88.51亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">美团－Ｗ</td>
+                <td style="padding:8px;">122.20</td>
+                <td style="padding:8px;"><span class="up">+0.49%</span></td>
+                <td style="padding:8px;">68.44亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">京东集团－ＳＷ</td>
+                <td style="padding:8px;">122.70</td>
+                <td style="padding:8px;"><span class="down">-0.16%</span></td>
+                <td style="padding:8px;">18.21亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">汇丰控股</td>
+                <td style="padding:8px;">95.25</td>
+                <td style="padding:8px;"><span class="down">-0.94%</span></td>
+                <td style="padding:8px;">18.87亿</td>
+                </tr>
+            
+            </tbody>
+        </table>
 
         <h4>美股市场</h4>
         
-        <p>道琼斯：指数收盘价 42343.6484，上涨 1.78%（+740.58），成交额 5.01亿</p>
+        <p>道琼斯：指数收盘价 43588.5781，下跌 1.23%（-542.40），成交额 7.05亿</p>
         
-        <p>纳斯达克：指数收盘价 19199.1632，上涨 2.47%（+461.96），成交额 80.19亿</p>
+        <p>纳斯达克：指数收盘价 20650.1322，下跌 2.24%（-472.32），成交额 84.12亿</p>
         
-        <p>标普500：指数收盘价 5921.5400，上涨 2.05%（+118.72），成交额 28.83亿</p>
+        <p>标普500：指数收盘价 6238.0098，下跌 1.60%（-101.38），成交额 36.13亿</p>
         
+
+        <table style="width: 100%; border-collapse: collapse; font-size: 16px;">
+            <thead>
+                <tr style="background-color: #f0f4fa;">
+                <th style="padding: 8px;">股票</th>
+                <th style="padding: 8px;">收盘价</th>
+                <th style="padding: 8px;">涨跌</th>
+                <th style="padding: 8px;">成交额</th>
+                <th style="padding: 8px;">市值</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">苹果</td>
+                <td style="padding:8px;">202.38</td>
+                <td style="padding:8px;"><span class="down">-2.50%</span></td>
+                <td style="padding:8px;">213.59亿</td>
+                <td style="padding:8px;">30227.12亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">谷歌A类股</td>
+                <td style="padding:8px;">189.13</td>
+                <td style="padding:8px;"><span class="down">-1.44%</span></td>
+                <td style="padding:8px;">65.83亿</td>
+                <td style="padding:8px;">22873.38亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">亚马逊</td>
+                <td style="padding:8px;">214.75</td>
+                <td style="padding:8px;"><span class="down">-8.27%</span></td>
+                <td style="padding:8px;">264.44亿</td>
+                <td style="padding:8px;">22798.62亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">微软</td>
+                <td style="padding:8px;">524.11</td>
+                <td style="padding:8px;"><span class="down">-1.76%</span></td>
+                <td style="padding:8px;">152.38亿</td>
+                <td style="padding:8px;">38957.97亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">特斯拉</td>
+                <td style="padding:8px;">302.63</td>
+                <td style="padding:8px;"><span class="down">-1.83%</span></td>
+                <td style="padding:8px;">270.84亿</td>
+                <td style="padding:8px;">9761.18亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">Meta Platforms</td>
+                <td style="padding:8px;">750.01</td>
+                <td style="padding:8px;"><span class="down">-3.03%</span></td>
+                <td style="padding:8px;">143.31亿</td>
+                <td style="padding:8px;">18857.71亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">英伟达</td>
+                <td style="padding:8px;">173.72</td>
+                <td style="padding:8px;"><span class="down">-2.33%</span></td>
+                <td style="padding:8px;">355.60亿</td>
+                <td style="padding:8px;">42387.68亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">腾讯音乐</td>
+                <td style="padding:8px;">20.54</td>
+                <td style="padding:8px;"><span class="down">-2.14%</span></td>
+                <td style="padding:8px;">0.97亿</td>
+                <td style="padding:8px;">318.14亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">阿里巴巴</td>
+                <td style="padding:8px;">117.07</td>
+                <td style="padding:8px;"><span class="down">-2.95%</span></td>
+                <td style="padding:8px;">14.56亿</td>
+                <td style="padding:8px;">2792.53亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">京东</td>
+                <td style="padding:8px;">30.91</td>
+                <td style="padding:8px;"><span class="down">-1.84%</span></td>
+                <td style="padding:8px;">3.54亿</td>
+                <td style="padding:8px;">445.57亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">Sea Ltd.</td>
+                <td style="padding:8px;">154.21</td>
+                <td style="padding:8px;"><span class="down">-1.56%</span></td>
+                <td style="padding:8px;">4.25亿</td>
+                <td style="padding:8px;">912.95亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">阿斯麦</td>
+                <td style="padding:8px;">689.82</td>
+                <td style="padding:8px;"><span class="down">-0.70%</span></td>
+                <td style="padding:8px;">11.20亿</td>
+                <td style="padding:8px;">2672.36亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">禾赛科技</td>
+                <td style="padding:8px;">18.73</td>
+                <td style="padding:8px;"><span class="down">-1.42%</span></td>
+                <td style="padding:8px;">0.51亿</td>
+                <td style="padding:8px;">24.81亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">台积电</td>
+                <td style="padding:8px;">235.21</td>
+                <td style="padding:8px;"><span class="down">-2.65%</span></td>
+                <td style="padding:8px;">31.81亿</td>
+                <td style="padding:8px;">12199.22亿</td>
+                </tr>
+            
+                
+                <tr style="border-bottom:1px solid #ddd;">
+                <td style="padding:8px;">拼多多</td>
+                <td style="padding:8px;">110.06</td>
+                <td style="padding:8px;"><span class="down">-2.99%</span></td>
+                <td style="padding:8px;">8.41亿</td>
+                <td style="padding:8px;">1562.46亿</td>
+                </tr>
+            
+            </tbody>
+        </table>
 
         <h4>全球市场</h4>
         
-        <p>英国富时100：指数收盘价 8778.3100，上涨 0.69%（+60.34）</p>
+        <p>英国富时100：指数收盘价 9068.5800，下跌 0.70%（-64.23）</p>
         
-        <p>德国DAX30：指数收盘价 24268.1387，上涨 1.00%（+240.49）</p>
+        <p>德国DAX30：指数收盘价 23425.9688，下跌 2.66%（-639.50）</p>
         
-        <p>法国CAC40：指数收盘价 7841.0298，上涨 0.16%（+12.90）</p>
+        <p>法国CAC40：指数收盘价 7546.1597，下跌 2.91%（-225.81）</p>
         
-        <p>日经225：指数收盘价 37799.8200，上涨 0.20%（+75.71）</p>
+        <p>日经225：指数收盘价 40799.6016，下跌 0.66%（-270.22）</p>
         
-        <p>首尔综合指数：指数收盘价 2680.1500，上涨 1.63%（+42.93）</p>
+        <p>首尔综合指数：指数收盘价 3120.0100，下跌 3.86%（-125.43）</p>
         
-        <p>台湾加权指数：指数收盘价 21335.9199，下跌 0.00%（-0.62）</p>
+        <p>台湾加权指数：指数收盘价 23434.3789，下跌 0.46%（-108.14）</p>
         
     </div>
 
@@ -157,48 +487,283 @@
         <ul>
             
             <li>
-                <a href="https://www.ithome.com/0/856/457.htm" target="_blank">科技昨夜今晨 0528：小米一季度业绩再创新高；比亚迪刀片电池提前通过新国标；深蓝汽车就“车机投放降价广告”致歉...</a>
-                <span style="color:#777; margin-left:10px;">2025-05-28 07:56</span>
+                <a href="https://www.ithome.com/0/872/637.htm" target="_blank">EA 称暂无意向开发《模拟人生 5》，专注 4 代游戏正积极开发多人模式</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 21:37</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/856/456.htm" target="_blank">苹果 iOS 19 新特性曝光：iPhone eSIM 可直接转移至安卓</a>
-                <span style="color:#777; margin-left:10px;">2025-05-28 07:52</span>
+                <a href="https://www.ithome.com/0/872/636.htm" target="_blank">博主质疑谷歌“AI 试衣”存在隐私风险，竟遭对方高管拉黑</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 21:30</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/856/455.htm" target="_blank">重量超 2 万吨，我国渤海最大海上油气平台完工起运</a>
-                <span style="color:#777; margin-left:10px;">2025-05-28 07:48</span>
+                <a href="https://www.ithome.com/0/872/635.htm" target="_blank">1588 元起安伯尼克推出 RG 477M 安卓掌机：铝合金机身、天玑 8300 + 120Hz 面板</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 21:14</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/856/454.htm" target="_blank">Canalys 报告 2025Q1 欧洲手机出货量：三星持平、苹果同比增 10%、小米降 2%、摩托罗拉降 19%、谷歌增 43%</a>
-                <span style="color:#777; margin-left:10px;">2025-05-28 07:41</span>
+                <a href="https://www.ithome.com/0/872/634.htm" target="_blank">Stack Overflow 五万人大规模调查显示，开发者对 AI 工具信任度开始下降</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 21:12</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/856/453.htm" target="_blank">SpaceX 星舰第九次试飞顺利点火升空，首次尝试重复使用超重型助推器</a>
-                <span style="color:#777; margin-left:10px;">2025-05-28 07:37</span>
+                <a href="https://www.ithome.com/0/872/632.htm" target="_blank">Meta 雷朋联名智能眼镜销量今年激增 300%，第三代产品 10 月发售</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 20:51</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/856/452.htm" target="_blank">高通委托测试：苹果 iPhone 16e 自研基带 5G 性能落后于 X75 / X80 安卓竞品</a>
-                <span style="color:#777; margin-left:10px;">2025-05-28 07:28</span>
+                <a href="https://www.ithome.com/0/872/631.htm" target="_blank">Instagram 重拳出击，新规规定用户必须满 1000 名粉丝才能开直播</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 20:47</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/856/451.htm" target="_blank">计划 6 月 24 日发布：火狐 Firefox 浏览器最新 ESR 版 140 功能前瞻</a>
-                <span style="color:#777; margin-left:10px;">2025-05-28 07:24</span>
+                <a href="https://www.ithome.com/0/872/630.htm" target="_blank">美法官裁定，马斯克 X 平台必须面对关于儿童虐待图像的疏忽指控</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 20:30</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/856/450.htm" target="_blank">亚马逊《黑袍纠察队》衍生剧《V 世代》第二季首曝海报发布，播出时间待定</a>
-                <span style="color:#777; margin-left:10px;">2025-05-28 07:24</span>
+                <a href="https://www.ithome.com/0/872/628.htm" target="_blank">光学堆栈厚度不到 3 毫米，Meta 与斯坦福合作研发“革命性”VR / MR 头显用全新波导全息显示技术</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 20:22</span>
             </li>
             
             <li>
-                <a href="https://www.ithome.com/0/856/449.htm" target="_blank">古尔曼：苹果计划在 iOS 19 中推出独立游戏平台应用，从而取代 Game Center 服务</a>
-                <span style="color:#777; margin-left:10px;">2025-05-28 07:15</span>
+                <a href="https://www.ithome.com/0/872/627.htm" target="_blank">设计总监强调《战地 6》DLC 皮肤必须“不违和”，不会有运动员和艺人</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 20:02</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/626.htm" target="_blank">KDE Plasma 6.5 迎来昼夜自动切换亮暗主题功能，类似苹果 macOS</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 19:52</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/624.htm" target="_blank">今年底我国北斗产业规模将超 6000 亿元，全国已超 2.88 亿部智能手机支持北斗定位</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 19:29</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/623.htm" target="_blank">吉利全新博越预售：9.19 万-11.29 万元，标配 Flyme Auto 车机系统</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 19:23</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/622.htm" target="_blank">R7-7735HS + 双 2.5G 网口，准系统 1499 元天虹 TexHoo ZHR 迷你主机配置上新</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 19:14</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/620.htm" target="_blank">机械师曙光 16S Ultra 游戏本开启预约：酷睿 Ultra 7 255HX + RTX 5070 / Ti，8 月 12 日开售</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 18:54</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/619.htm" target="_blank">2025 年 7 月 Steam 软硬件调查：AMD 处理器份额首破 40%，英伟达 RTX 3060 重返榜首</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 18:29</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/617.htm" target="_blank">保时捷全新 911 Turbo S 年内亮相，将首次迎来混动版</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 18:28</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/615.htm" target="_blank">消息称小米 REDMI 开始调研新机 165Hz 刷新率面板，与一加展开超高刷屏竞争</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 18:22</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/614.htm" target="_blank">Steam 喜加一：原价 22 元弹幕射击游戏《DRACOMATON》免费领</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 18:16</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/613.htm" target="_blank">铁路 12306 学生购票服务宣布升级：新专区可提前 20 天预约，开车前 16 天即可兑现</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 18:04</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/606.htm" target="_blank">英特尔 Nova Lake 处理器提前布局 Linux 支持，家族分类迎来 20 年首次重大变革</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 17:54</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/605.htm" target="_blank">中国电子学会：我国连续 12 年成为全球最大工业机器人市场</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 17:49</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/603.htm" target="_blank">中国科学院院士、流体力学专家周恒因病逝世，享年 96 岁</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 17:36</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/602.htm" target="_blank">OpenAI 董事长布莱特・泰勒力挺计算机科学专业：能掌握的远不止编程语言</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 17:27</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/601.htm" target="_blank">美国昔日核工厂被发现 4 个放射性黄蜂巢</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 17:25</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/599.htm" target="_blank">问界发布六大交付承诺：不强制和捆绑销售、新车里程小于 30km 电量高于 80%</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 17:03</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/596.htm" target="_blank">SignalRGB 推出“烤面包机”主题 Mini-ITX PC 主机，调侃雷蛇未兑现的承诺</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:50</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/595.htm" target="_blank">华为宣布腾讯《英雄联盟手游》鸿蒙版 8 月 6 日开启万人抢先体验，账号无缝继承、资产数据互通</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:36</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/594.htm" target="_blank">OpenAI 教育负责人呼吁：学生应将 ChatGPT 视为工具而非“答题机器”</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:32</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/593.htm" target="_blank">全球首台：浙大“悟空”类脑计算机问世，神经元数量超 20 亿</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:32</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/591.htm" target="_blank">游戏《杀手：赦免》9 月 25 日登苹果 iPhone / iPad 平台，14.99 美元</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:21</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/590.htm" target="_blank">GPT-5 难产内幕曝光：核心团队遭挖空，推理魔咒难破，靠英伟达续命</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:14</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/589.htm" target="_blank">梅赛德斯-AMG 新款 GT 四门电动车内饰首曝：运动型方向盘，动力预估超 1300 马力</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:14</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/588.htm" target="_blank">奇瑞 iCAR V27 亮相：中大型增程“方盒子”SUV，Q4 国内上市</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:07</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/587.htm" target="_blank">微软 Win11 Recall 功能被曝存安全隐患：可截获信用卡、密码等敏感个人信息</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:05</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/586.htm" target="_blank">腾讯、抖音、快手等“持证亮牌”：我国 13516 个公众账号已加注红“V”标识</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:04</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/585.htm" target="_blank">4 个阶段：微软将逐步开源 Win11 用户界面框架 WinUI</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 16:00</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/584.htm" target="_blank">消息称 Polestar 极星汽车上半年在华销量 69 辆，或将于今年底退出中国市场</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 15:51</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/582.htm" target="_blank">6:49.275：雪佛兰科尔维特 ZR1X 刷新纽北最快美国汽车纪录</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 15:43</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/580.htm" target="_blank">8 月 20 日发布：“月光石”版谷歌 Pixel Buds Pro 2 耳机渲染图曝光</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 15:34</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/579.htm" target="_blank">Steam 国区首发 8 折 86.4 元，游戏《泰坦之旅 2》开启抢先体验</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 15:32</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/578.htm" target="_blank">昆仑万维发布并开源全新推理大模型 MindLink，基于 Qwen3-32B 和 Qwen2.5-72B 进行后训练</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 15:31</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/577.htm" target="_blank">初创公司 Brilliant Labs 推出 Halo 智能眼镜：能帮你认人记事，299 美元</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 15:23</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/576.htm" target="_blank">市场监管总局发布《网络交易平台收费行为合规指南》：明确公示义务、不得向经营者重复收费</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 15:19</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/575.htm" target="_blank">富士相机和镜头因当局关税在美国市场全面涨价，部分产品涨幅达数百美元</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 15:18</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/571.htm" target="_blank">消息称联发科天玑 8500 芯片架构制程无重大变化，性能目标安兔兔跑分超 200 万</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 15:01</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/570.htm" target="_blank">AI 答 IMO 难题坦承“不会”，OpenAI 称“这就是自我意识”</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:56</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/569.htm" target="_blank">169 元小米推出“Xiaomi Life 晴雨伞 闪电黄”：原生适配小米汽车收纳槽、防晒级别 UPF50+</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:55</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/568.htm" target="_blank">兰博基尼展示定制版“鲁莽”超跑：三色调外观，907 马力、零百加速 2.7 秒</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:52</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/567.htm" target="_blank">暴雪《暗黑破坏神 2 重制版》国服开启预购：168~458 元，8 月 27 日正式上线</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:47</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/566.htm" target="_blank">Steam 喜加一：原价 19.9 元派对游戏《厨房战争》免费领</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:42</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/565.htm" target="_blank">今年上半年中国电竞产业收入 127.61 亿元，直播收入占比达 80%</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:39</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/563.htm" target="_blank">锐龙 AI Max+ 395 笔记本有望杀入 1000 美元内，新厂商样机亮相</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:34</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/562.htm" target="_blank">美国宇航局揭秘罗曼空间望远镜“防晒霜”：做到外部 102 °C / 内部−135 °C，实现冰火两重天</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:26</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/561.htm" target="_blank">滴滴联合警方打击“猪猪侠”“小狸”等顺风车外挂，涉案资金 200 余万元</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:20</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/560.htm" target="_blank">KDE Plasma 6.5 桌面环境前瞻：自动日夜主题切换、改进 Wayland 体验</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 14:05</span>
+            </li>
+            
+            <li>
+                <a href="https://www.ithome.com/0/872/558.htm" target="_blank">《中国奇谭》首部动画电影《浪浪山小妖怪》今日上映</a>
+                <span style="color:#777; margin-left:10px;">2025-08-02 13:57</span>
             </li>
             
         </ul>

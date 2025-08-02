@@ -6,6 +6,12 @@ The format is based on [Semantic Versioning](https://semver.org/lang/en/), and t
 
 ---
 
+## [0.6.0] - 2025-08-02
+
+### Added
+
+- Add Stock Info
+
 ## [0.5.1] - 2025-06-14
 
 ### Changed
