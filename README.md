@@ -173,7 +173,7 @@ reportkevinweng@KevindeMacBook-Air daily_report % python -m fetchers.weather
 - [X] 添加科技资讯（RSS 抓取）
 - [ ] 添加体育资讯
 - [X] 增加港股、美股等多市场行情
-- [ ] 个股行情支持
+- [X] 个股行情支持
 - [X] 支持 HTML 邮件格式模板
 - [X] 使用 Docker 部署或定时任务（crontab定时拉去git并执行早报）
 - [X] 加入深圳天气信息
